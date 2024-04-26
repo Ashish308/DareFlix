@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DareFlix Lobby</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Autocomplete</title>
+</head>
+<body class="body">
+    <script src="scripts.js"></script>
+    <script src="lobbies.json"></script>
+    <script src="movieData.json"></script>
+    <script src="wordsData.json"></script>
+    <script>
+        var wordsData = [
+	{
+		"Name":"Driver"
+	},
+	{
+		"Name":"Hello"
+	},
+	{
+		"Name":"Damn"
+	},
+	{
+		"Name":"Died"
+	},
+	{
+		"Name":"Bats"
+	},
+	{
+		"Name":"Police"
+	}
+];
+    </script>
+
+    <h2>DareFlix Admin</h2>
+    <div id="id_giver">
+        <div class="bouncing-text">W97BA8</div>
+        <button class="button centerAlign" onclick="changeToMoviePick()">Begin!</button>
+    </div>
+    <div id="autocomplete-container" style="display:none;">
+        <label for="movieInput">Type a movie:</label>
+        <input type="text" id="movieInput" oninput="autocompleteMovies()" onkeydown="handleSpace(event)">
+        <button class="button" style="font-size:20px; padding:10px" onclick="changeToWordsSelector()">Enter</button>
+        <div id="icons-container"></div>
+    </div>
+    <div id="autocomplete-container-words" style="display:none;">
+        <label for="movieInputWords">Type a keyword:</label>
+        <input type="text" id="movieInputWords" oninput="autocompleteWords()" onkeydown="handleSpaceWords(event)">
+        <button class="button" style="font-size:20px; padding:10px" onclick="changeToMovieViewer()">Enter</button>
+        <div id="icons-container-words"></div>        
+    </div>
+
+
+</body>
+</html>
